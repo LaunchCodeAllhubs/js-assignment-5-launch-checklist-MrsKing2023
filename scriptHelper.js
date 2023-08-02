@@ -15,14 +15,36 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
                 <img src="">
    */
 }
+//<div> faultyItems </div>
+//<li> `${pilot}, ${copilot} </li>
+//<div class="faultyItems">
+   // <label>Co-pilot Name <input type="text" name="copilotName"/></label>
+//</div>
+
 
 function validateInput(testInput) {
-   
-}
+    if (testInput === "")
+    {
+        return "Empty";
+    }
+    else if (isNaN(testInput))
+    {
+        return "Not a Number";
+    }
+    else if (isNaN(testInput) === false)
+    {
+        return "Is a Number";
+    }
+ }
 
-function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-   
-}
+ function formSubmission(document, pilot, copilot, fuelLevel, cargoLevel) {
+
+    if (validateInput(pilot) === "Empty" || validateInput(copilot) === "Empty" || validateInput(fuelLevel) === "Empty" || validateInput(cargoLevel) === "Empty") {
+        alert("All fields are required!");
+    } else if (validateInput(pilot) === "Is a Number" || validateInput(copilot) === "Is a Number" || validateInput(fuelLevel) === "Not a Number" || validateInput(cargoLevel) === "Not a Number" ) {
+        alert("Make sure to enter valid information for each field!");
+    }}
+
 
 async function myFetch() {
     let planetsReturned;
