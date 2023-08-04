@@ -4,7 +4,9 @@
     window.addEventListener("load", function() {
 
         let form = document.querySelector("form");
-     
+        let list = document.getElementById("faultyItems");
+         list.style.visibility = "hidden"
+
         form.addEventListener("submit", function(event) {
             event.preventDefault();
             let pilotInput = document.querySelector("input[name=pilotName]");
@@ -19,7 +21,7 @@
             let cargoInput = document.querySelector("input[name=cargoMass]");
             let cargoLevel = Number(cargoInput.value);
      
-            formSubmission(document, pilot, copilot, fuelLevel, cargoLevel);
+            formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel);
         });
      });
 
