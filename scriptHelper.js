@@ -53,11 +53,15 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         copilotStatus.innerHTML = `Co-pilot ${copilotName} is ready for launch`
         launchStatus.innerHTML = "Shuttle Not Ready for Launch"
         launchColor.innerHTML.style = "red"
-    } else if (cargoMass >= 10000){
+        <div id = "launchStatusCheck"  </div>
+        <h2 id="launchStatus" style = "color: red;" /h2> 
+    } else if (cargoStatus >= 10000){
         list.style.visibility = "visible"
         cargoStatus.innerHTML = "Too much mass for the shuttle to take off"
         launchStatus.innerHTML = "Shuttle Not Ready for Launch"
-        launchColor.innerHTML.style.color = "red"#C7254E, rgb(199, 37, 78)
+        launchColor.innerHTML.style.color = "red: #C7254E: rgb(199, 37, 78)
+        <div launchStatus style= "color: red" </div>
+
     } else {
         launchStatus.innerHTML = "Shuttle is ready for launch"
         launchColor.innerHTML.style = "green" #419F6A or rgb(65, 159, 106)
@@ -65,6 +69,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
     }
      
+    
 }
 
 async function myFetch() {
