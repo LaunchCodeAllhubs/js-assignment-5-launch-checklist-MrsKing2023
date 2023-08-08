@@ -4,22 +4,19 @@ require('isomorphic-fetch');
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
    // Here is the HTML formatting for our mission target div.
    
-   let missionDestination = document.getElementById(missionDestination);
-   for (let i =0; i < missionDestination.length; i++) {
-    let data = missionDestination[i];
+   let missionDestination = document.getElementById(missionTarget);
     missionDestination.innerHTML += `
-
     <h2>Mission Destination</h2>
     <ol>
-        <li>Name: ${missionDestination.name} </li>
-        <li>Diameter: ${missionDestination.diameter}</li>
-        <li>Star: ${missionDestination.star}</li>
-        <li>Distance from Earth: ${missionDestination.distance} </li>
-        <li>Number of Moons: ${missionDestination.moons} </li>
+        <li>Name: ${name} </li>
+        <li>Diameter: ${diameter}</li>
+        <li>Star: ${star}</li>
+        <li>Distance from Earth: ${distance} </li>
+        <li>Number of Moons: ${moons} </li>
     </ol>
-        <img src="${missionDestination.image}">
+        <img src="${imageUrl}">
     `;  
-    }
+    
 }
 
 function validateInput(testInput) {
@@ -80,10 +77,12 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 async function myFetch() {
     let planetsReturned;
 
-    planetsReturned = await fetch('https://handlers.education.launchcode.org/static/planets.json').then( function(response) {
-        });
-
-    return response.json()
+    planetsReturned = await fetch('https://handlers.education.launchcode.org/static/planets.json').then(function(response) {
+        if (response.status <=400 )   {
+            throw new Error("Failed Response");
+        } else {
+            return response.json()
+    }});   
     return planetsReturned;
 }
 
