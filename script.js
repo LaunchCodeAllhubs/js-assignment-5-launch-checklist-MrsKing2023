@@ -23,6 +23,7 @@
      
             formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel);
         });
+        
         let listedPlanets;
         // Set listedPlanetsResponse equal to the value returned by calling myFetch()
         let listedPlanetsResponse = myFetch()
@@ -30,11 +31,11 @@
             listedPlanets = result;
             //console.log(listedPlanets);
         }).then(function () {
-            //console.log(listedPlanets);
+            console.log(listedPlanets);
             pickPlanet(listedPlanets) 
             let storePlanet = pickPlanet(listedPlanets) 
             console.log(pickPlanet(listedPlanets))
-            addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl);
+            addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl)
         })
      });
   
