@@ -15,8 +15,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
         <li>Number of Moons: ${moons} </li>
     </ol>
         <img src="${imageUrl}">
-    `;  
-    
+    `;   
 }
 
 function validateInput(testInput) {
@@ -89,7 +88,6 @@ async function myFetch() {
 function pickPlanet(planets) {
     let index = Math.floor(Math.random()*planets.length)
     return planets[index]
-    
 }
 
 module.exports.addDestinationInfo = addDestinationInfo;
