@@ -34,8 +34,9 @@
             console.log(listedPlanets);
             pickPlanet(listedPlanets) 
             let storePlanet = pickPlanet(listedPlanets) 
-            console.log(pickPlanet(listedPlanets))
-            addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl)
+            //console.log(pickPlanet(listedPlanets))
+            console.log(storePlanet)
+            addDestinationInfo(document, storePlanet.name, storePlanet.diameter, storePlanet.star, storePlanet.distance, storePlanet.moons, storePlanet.image)
         })
      });
   

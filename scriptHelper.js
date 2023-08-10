@@ -3,19 +3,18 @@ require('isomorphic-fetch');
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
    // Here is the HTML formatting for our mission target div.
-//i am not accessing the object correctly. 
 
-    let missionDestination = document.getElementById(missionTarget);
+    let missionDestination = document.getElementById("missionTarget");
     missionDestination.innerHTML += `
     <h2>Mission Destination </h2>
     <ol>
-        <li>Name:  ${missionTarget.name} </li>
-        <li>Diameter: ${missionTarget.diameter}</li>
-        <li>Star: ${missionTarget.star}</li>
-        <li>Distance from Earth: ${missionTarget.distance} </li>
-        <li>Number of Moons: ${missionTarget.moons} </li>
+        <li>Name:  ${name} </li>
+        <li>Diameter: ${diameter}</li>
+        <li>Star: ${star}</li>
+        <li>Distance from Earth: ${distance} </li>
+        <li>Number of Moons: ${moons} </li>
     </ol>
-        <img src="${missionTarget.imageUrl}">
+        <img src="${imageUrl} alt="planet" ">
     `;   
 }
 
