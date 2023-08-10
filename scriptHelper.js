@@ -78,7 +78,7 @@ async function myFetch() {
     let planetsReturned;
 
     planetsReturned = await fetch('https://handlers.education.launchcode.org/static/planets.json').then(function(response) {
-        if (response.status <=400 )   {
+        if (response.status >=400 )   {
             throw new Error("Failed Response");
         } else {
             return response.json()
@@ -87,8 +87,9 @@ async function myFetch() {
 }
 
 function pickPlanet(planets) {
-   return [Math.random(planetsReturned.length)]
-
+    let index = Math.floor(Math.random()*planets.length)
+    return planets[index]
+    
 }
 
 module.exports.addDestinationInfo = addDestinationInfo;
