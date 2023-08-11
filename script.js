@@ -32,10 +32,10 @@
             //console.log(listedPlanets);
         }).then(function () {
             console.log(listedPlanets);
-            pickPlanet(listedPlanets) 
+            //pickPlanet(listedPlanets) 
             let storePlanet = pickPlanet(listedPlanets) 
             //console.log(pickPlanet(listedPlanets))
-            console.log(storePlanet)
+           // console.log(storePlanet)
             addDestinationInfo(document, storePlanet.name, storePlanet.diameter, storePlanet.star, storePlanet.distance, storePlanet.moons, storePlanet.image)
         })
      });
